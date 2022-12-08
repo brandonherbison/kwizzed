@@ -4,7 +4,7 @@ import Logo from "./BrainBulb.png"
 
 
 
-export const NavBar = ({ token, setToken }) => {
+export const NavBar = ({ setToken, loggedInUser }) => {
 
 
     const [open, setOpen] = useState(false)
@@ -29,7 +29,7 @@ export const NavBar = ({ token, setToken }) => {
                 </a>
                 <div className="flex items-center md:order-2">
                     <button onClick={showMenu} type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="top">
-                        <img className="w-12 h-12 rounded-full" src="https://avatars.githubusercontent.com/u/105457770?v=4" alt="avatar" />
+                        <img className="w-12 h-12 rounded-full" src={loggedInUser?.profile_image_url} alt="avatar" />
                     </button>
 
                 </div>
@@ -38,13 +38,22 @@ export const NavBar = ({ token, setToken }) => {
         </nav>
         {
             open
-                ? <div className="flex justify-end container-sm">
-                    <div className="my-4 w-64 place-self-end bg-white divide-y divide-gray-100 rounded shadow " id="user-dropdown">
+                ? <div className="flex justify-end container-sm relative">
+                    <div className=" w-64 place-self-end bg-white divide-y divide-gray-100 rounded shadow " id="user-dropdown">
                         <div className="px-4 py-3">
-                            <span className="block text-sm text-gray-900 dark:text-white">Brandon Herbison</span>
-                            <span className="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+                            <span className="block text-sm text-gray-900 dark:text-white">{loggedInUser?.full_name}</span>
+                            <span className="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">{loggedInUser?.user?.email}</span>
                         </div>
                         <ul className="py-1" aria-labelledby="user-menu-button">
+                            <li>
+                                <a href="/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                            </li>
+                            <li>
+                                <a href="/submitted-questions" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Submitted Questions</a>
+                            </li>
+                            <li>
+                                <a href="/reviews" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Leave a Review</a>
+                            </li>
                             <li>
                                 <a onClick={logout} href="/login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
                             </li>

@@ -33,3 +33,16 @@ export const GetPracticeQuestions = () => {
         }
     }).then(res => res.json())
 }
+
+
+export const CreateNewQuestion = (question) => {
+    return fetch("http://localhost:8000/questions", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        },
+        body: JSON.stringify(question)
+    })
+        .then(res => res.json())
+}

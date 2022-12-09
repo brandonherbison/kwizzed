@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { updateUser } from "../../managers/UserManager";
+import { getCurrentUser, updateUser } from "../../managers/UserManager";
 
 
 
 export const UpdateProfile = ({ loggedInUser }) => {
 
-
+    const [currentUser, setCurrentUser] = useState({});
     const [currentProfile, updateCurrentProfile] = useState({
 
         username: "",
-        profileURL: "",
+        profileImageUrl: "",
         email: "",
         bio: ""
     });
@@ -18,13 +18,18 @@ export const UpdateProfile = ({ loggedInUser }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
+        getCurrentUser().then((user) => {
+            setCurrentUser(user)
+        })}, [])
+
+    useEffect(() => {
         updateCurrentProfile({
-            username: loggedInUser?.user?.username,
-            profileURL: loggedInUser?.profile_image_url,
-            email: loggedInUser?.user?.email,
-            bio: loggedInUser?.bio
+            username: currentUser.username,
+            profileImageUrl: currentUser.profileImageUrl,
+            email: currentUser.email,
+            bio: currentUser.bio
         });
-    }, [loggedInUser]);
+    }, [currentUser]);
 
     const changeProfileState = (domEvent) => {
         // TODO: Complete the onChange function
@@ -37,9 +42,9 @@ export const UpdateProfile = ({ loggedInUser }) => {
 
         evt.preventDefault();
         const player = {
-            id: loggedInUser.id,
+            id: currentUser.id,
             username: currentProfile.username,
-            profileImageUrl: currentProfile.profileURL,
+            profileImageUrl: currentProfile.profileImageUrl,
             email: currentProfile.email,
             bio: currentProfile.bio
         };
@@ -56,7 +61,7 @@ export const UpdateProfile = ({ loggedInUser }) => {
             </div>
             <div className="mb-6">
                 <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Profile Image URL</label>
-                <input onChange={changeProfileState} type="text" id="profileURL" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " value={currentProfile.profileURL} required />
+                <input onChange={changeProfileState} type="text" id="profileImageUrl" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " value={currentProfile.profileImageUrl} required />
             </div>
             <div className="mb-6">
                 <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email address</label>

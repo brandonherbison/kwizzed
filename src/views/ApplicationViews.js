@@ -16,28 +16,27 @@ import { CreateQuestion } from "../components/questions/CreateQuestion"
 
 
 
-export const ApplicationViews = ({ token, setToken, loggedInUser }) => {
+export const ApplicationViews = ({ token, setToken }) => {
     return <>
         {
             token
-            ? <NavBar token={token} setToken={setToken} loggedInUser={loggedInUser}></NavBar>
+            ? <NavBar token={token} setToken={setToken}></NavBar>
             : null
         }
         <Routes>
         
-            <Route path="/" element={<Home />} token={token} />
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login setToken={setToken}/>} />
             <Route path="/register" element={<Register setToken={setToken} />} />
             <Route element={<Authorized token={token} />} />
-            <Route path="/category-selector" element={<CategorySelector token={token} />} />
-            <Route path="/play-now/:categoryId" element={<Quiz token={token} loggedInUser={loggedInUser} />} />
-            <Route path="/practice-info" element={<PracticeInfo token={token} />} />
-            <Route path="/practice-quiz" element={<PracticeQuiz token={token} />} />
-            <Route path="/profile" element={<Profile token={token} loggedInUser={loggedInUser}/>} />
-            <Route path="/update-profile" element={<UpdateProfile token={token} loggedInUser={loggedInUser}/>} />
-            <Route path="/submitted-questions" element={<SubmittedQuestions token={token} loggedInUser={loggedInUser}/>} />
-            <Route path="/create-question" element={<CreateQuestion token={token} loggedInUser={loggedInUser}/>} />
-
+            <Route path="/category-selector" element={<CategorySelector />} />
+            <Route path="/play-now/:categoryId" element={<Quiz />} />
+            <Route path="/practice-info" element={<PracticeInfo />} />
+            <Route path="/practice-quiz" element={<PracticeQuiz />} />
+            <Route path="/profile" element={<Profile/>} />
+            <Route path="/update-profile" element={<UpdateProfile/>} />
+            <Route path="/submitted-questions" element={<SubmittedQuestions/>} />
+            <Route path="/create-question" element={<CreateQuestion/>} />
 
         </Routes>
     </>

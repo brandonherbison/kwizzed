@@ -1,13 +1,20 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { getCurrentUser } from "../../managers/UserManager"
 import Logo from "./BrainBulb.png"
 
 
 
 
-export const NavBar = ({ setToken, loggedInUser }) => {
+export const NavBar = ({ setToken }) => {
 
 
     const [open, setOpen] = useState(false)
+    const [currentUser, setCurrentUser] = useState({})
+
+    useEffect(() => {
+        getCurrentUser().then((user) => {
+            setCurrentUser(user)
+        })}, [])
 
     const showMenu = () => {
         setOpen(!open)
@@ -29,7 +36,7 @@ export const NavBar = ({ setToken, loggedInUser }) => {
                 </a>
                 <div className="flex items-center md:order-2">
                     <button onClick={showMenu} type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="top">
-                        <img className="w-12 h-12 rounded-full" src={loggedInUser?.profile_image_url} alt="avatar" />
+                        <img className="w-12 h-12 rounded-full" src={currentUser.profileImageUrl} alt="avatar" />
                     </button>
 
                 </div>
@@ -41,8 +48,8 @@ export const NavBar = ({ setToken, loggedInUser }) => {
                 ? <div className="flex justify-end container-sm relative">
                     <div className=" w-64 place-self-end bg-white divide-y divide-gray-100 rounded shadow " id="user-dropdown">
                         <div className="px-4 py-3">
-                            <span className="block text-sm text-gray-900 dark:text-white">{loggedInUser?.full_name}</span>
-                            <span className="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">{loggedInUser?.user?.email}</span>
+                            <span className="block text-sm text-gray-900 dark:text-white">{currentUser.firstName} {currentUser.lastName}</span>
+                            <span className="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">{currentUser.email}</span>
                         </div>
                         <ul className="py-1" aria-labelledby="user-menu-button">
                             <li>

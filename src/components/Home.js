@@ -2,7 +2,7 @@
 
 
 
-export const Home = ({ token }) => {
+export const Home = () => {
     return (
         <>
             <div className="fixed top-20">

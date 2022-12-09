@@ -2,11 +2,13 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { CreatePlayerResponse } from "../../managers/PlayerResponseManager"
 import { GetQuestionsByCategory } from "../../managers/QuestionManager"
+import { getCurrentUser } from "../../managers/UserManager"
 
 
 
-export const Quiz = ({ loggedInUser }) => {
+export const Quiz = () => {
 
+    const [currentUser, setCurrentUser] = useState({})
     const { categoryId } = useParams()
     const [questions, setQuestions] = useState([])
     const navigate = useNavigate()
@@ -18,6 +20,11 @@ export const Quiz = ({ loggedInUser }) => {
     useEffect(() => {
         GetQuestionsByCategory(categoryId).then(setQuestions)
     }, [])
+
+    useEffect(() => {
+        getCurrentUser().then(setCurrentUser)
+    }, [])
+
 
     const answerClicked = (answer) => {
 
@@ -32,7 +39,7 @@ export const Quiz = ({ loggedInUser }) => {
         }
 
         CreatePlayerResponse({
-            playerId: loggedInUser.id,
+            playerId: currentUser.id,
             answerId: answer.id,
         })
     }

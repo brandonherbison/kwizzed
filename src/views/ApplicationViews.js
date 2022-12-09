@@ -12,6 +12,8 @@ import { Profile } from "../components/profile/Profile"
 import { UpdateProfile } from "../components/profile/UpdateProfile"
 import { SubmittedQuestions } from "../components/questions/SubmittedQuestions"
 import { CreateQuestion } from "../components/questions/CreateQuestion"
+import { ReviewList } from "../components/reviews/ReviewList"
+import { CreateReview } from "../components/reviews/CreateReview"
 
 
 
@@ -37,6 +39,8 @@ export const ApplicationViews = ({ token, setToken }) => {
             <Route path="/update-profile" element={<UpdateProfile/>} />
             <Route path="/submitted-questions" element={<SubmittedQuestions/>} />
             <Route path="/create-question" element={<CreateQuestion/>} />
+            <Route path="/reviews" element={<ReviewList/>} />
+            <Route path="/create-review" element={<CreateReview/>} />
 
         </Routes>
     </>

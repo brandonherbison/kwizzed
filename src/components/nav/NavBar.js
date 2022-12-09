@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { getCurrentUser } from "../../managers/UserManager"
 import Logo from "./BrainBulb.png"
 
@@ -10,6 +11,7 @@ export const NavBar = ({ setToken }) => {
 
     const [open, setOpen] = useState(false)
     const [currentUser, setCurrentUser] = useState({})
+    const navigate = useNavigate()
 
     useEffect(() => {
         getCurrentUser().then((user) => {
@@ -24,6 +26,8 @@ export const NavBar = ({ setToken }) => {
     const logout = () => {
         setToken(null)
         localStorage.removeItem('auth_token')
+        navigate("/login")
+
     }
 
     return <>

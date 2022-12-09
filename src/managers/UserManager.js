@@ -20,7 +20,7 @@ export const updateUser = user => {
 }
 
 export const getCurrentUser = () => {
-    return fetch("http://localhost:8000/current", {
+    return fetch("http://localhost:8000/players/current", {
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }

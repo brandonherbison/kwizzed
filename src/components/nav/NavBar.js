@@ -14,7 +14,8 @@ export const NavBar = ({ setToken }) => {
     useEffect(() => {
         getCurrentUser().then((user) => {
             setCurrentUser(user)
-        })}, [])
+        })
+    }, [])
 
     const showMenu = () => {
         setOpen(!open)
@@ -48,22 +49,30 @@ export const NavBar = ({ setToken }) => {
                 ? <div className="flex justify-end container-sm relative">
                     <div className=" w-64 place-self-end bg-white divide-y divide-gray-100 rounded shadow " id="user-dropdown">
                         <div className="px-4 py-3">
-                            <span className="block text-sm text-gray-900 dark:text-white">{currentUser.firstName} {currentUser.lastName}</span>
+                            <span className="block text-sm text-gray-900 dark:text-white">{currentUser.firstName} {currentUser.lastName} {currentUser.isStaff ? "(Admin)": "(Player)"}</span>
                             <span className="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">{currentUser.email}</span>
                         </div>
                         <ul className="py-1" aria-labelledby="user-menu-button">
-                            <li>
-                                <a href="/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
-                            </li>
-                            <li>
-                                <a href="/submitted-questions" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Submitted Questions</a>
-                            </li>
-                            <li>
-                                <a href="/reviews" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Leave a Review</a>
-                            </li>
-                            <li>
-                                <a onClick={logout} href="/login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
-                            </li>
+                            {
+                                currentUser.isStaff
+                                    ? <li>
+                                        <a onClick={logout} href="/login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
+                                    </li>
+                                    : <>
+                                        <li>
+                                            <a href="/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                                        </li>
+                                        <li>
+                                            <a href="/submitted-questions" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Submitted Questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="/reviews" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Leave a Review</a>
+                                        </li>
+                                        <li>
+                                            <a onClick={logout} href="/login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
+                                        </li>
+                                    </>
+                            }
                         </ul>
                     </div>
                 </div>

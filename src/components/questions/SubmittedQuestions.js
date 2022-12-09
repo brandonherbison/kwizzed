@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { GetQuestions } from "../../managers/QuestionManager"
+import { deleteQuestion, GetQuestions } from "../../managers/QuestionManager"
 
 
 
@@ -9,8 +9,12 @@ export const SubmittedQuestions = () => {
 
     const navigate = useNavigate()
 
-    useEffect(() => {
+    const setQuestionState = () => {
         GetQuestions().then(setQuestions)
+    }
+
+    useEffect(() => {
+        setQuestionState()
     }, [])
 
 
@@ -32,9 +36,22 @@ export const SubmittedQuestions = () => {
                             return <p key={answer.id} className="font-normal text-gray-700">{answer.answer_text} {answer.is_correct ? "(Correct Answer)" : ""}</p>
                         })
                     }
+                    {
+                        question.is_approved
+                        ? "Your question has been approved!"
+                        :  <>
+                        <button
+                        onClick={() => deleteQuestion(question.id).then(setQuestionState)}
+                        type="button"
+                        className="text-white bg-ronBurgundy hover:ronBurgundy-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-2 py-2.5 text-center mr-2 mb-2">
+                        Delete</button>
+                        <p>Your question is pending approval by an administrator. You may delete your question at this time.</p>
+                        </>
+                    }
                 </div>
 
             })
         }
+        
     </>
 }

@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom"
 import { Register } from "../components/auth/Register"
 import { Login } from "../components/auth/Login"
 import { Authorized } from "./Authorized"
-import { Home } from "../components/Home"
 import { CategorySelector } from "../components/play-now/CategorySelector"
 import { Quiz } from "../components/play-now/Quiz"
 import { PracticeInfo } from "../components/practice/PracticeInfo"
@@ -14,6 +13,7 @@ import { SubmittedQuestions } from "../components/questions/SubmittedQuestions"
 import { CreateQuestion } from "../components/questions/CreateQuestion"
 import { ReviewList } from "../components/reviews/ReviewList"
 import { CreateReview } from "../components/reviews/CreateReview"
+import { HomeContainer } from "../components/home/HomeConatainer"
 
 
 
@@ -27,7 +27,7 @@ export const ApplicationViews = ({ token, setToken }) => {
         }
         <Routes>
         
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<HomeContainer />} />
             <Route path="/login" element={<Login setToken={setToken}/>} />
             <Route path="/register" element={<Register setToken={setToken} />} />
             <Route element={<Authorized token={token} />} />

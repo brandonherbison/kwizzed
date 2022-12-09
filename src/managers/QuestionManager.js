@@ -46,3 +46,33 @@ export const CreateNewQuestion = (question) => {
     })
         .then(res => res.json())
 }
+
+export const deleteQuestion = (questionId) => {
+    return fetch(`http://localhost:8000/questions/${questionId}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    })
+}
+
+export const updateQuestion = (question) => {
+    return fetch(`http://localhost:8000/questions/${question.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        },
+        body: JSON.stringify(question)
+    })
+}
+
+export const getUnapprovedQuestions = () => {
+    return fetch("http://localhost:8000/questions?approved=False", {
+        headers: {        
+            "Accept": "application/json",
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    }).then(res => res.json())
+}

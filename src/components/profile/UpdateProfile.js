@@ -46,7 +46,8 @@ export const UpdateProfile = ({ loggedInUser }) => {
             username: currentProfile.username,
             profileImageUrl: currentProfile.profileImageUrl,
             email: currentProfile.email,
-            bio: currentProfile.bio
+            bio: currentProfile.bio,
+            isActive: currentUser.isActive
         };
         updateUser(player).then(() => navigate("/profile"));
 

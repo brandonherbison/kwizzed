@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { CreateNewAnswer } from "../../managers/AnswerManager"
 import { GetCategories } from "../../managers/CategoryManager"
-import { CreateNewQuestion } from "../../managers/QuestionManager"
+import { CreateNewQuestion, GetQuestions } from "../../managers/QuestionManager"
 import { getCurrentUser } from "../../managers/UserManager"
 
 
@@ -96,10 +96,13 @@ export const CreateQuestion = () => {
                 }).catch(function (error) {
                     // if there's an error, log it
                     console.log(error);
-                })
-                    .then(() => {
+                }).then(() => {
+                    GetQuestions().then(() => {
                         navigate("/submitted-questions")
-                    })
+                    }
+                    )
+                }
+                )
             )
         }
     }

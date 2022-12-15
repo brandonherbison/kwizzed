@@ -40,81 +40,56 @@ export const Register = ({ setToken }) => {
   }
 
   return (
-    <section className="columns is-centered">
-      <form className="column is-two-thirds" onSubmit={handleRegister}>
-        <h1 className="title">Kwizzed</h1>
-        <p className="subtitle">Create an account</p>
-        <div className="field">
-          <label className="label">First Name</label>
-          <div className="control">
-            <input className="input" type="text" ref={firstName} />
-          </div>
-        </div>
 
-        <div className="field">
-          <label className="label">Last Name</label>
-          <div className="control">
-            <input className="input" type="text" ref={lastName} />
-          </div>
-        </div>
+    <form className="grid grid-cols-2 gap-3 w-2/5 m-auto mt-36 p-6 bg-white border border-ronBurgundy border-2 rounded-lg shadow-xl bg-walterWhite" onSubmit={handleRegister}>
+      <h1 className="col-span-2 font-luckiest text-ronBurgundy text-3xl text-center">Register</h1>
+      <div className="col-span-1">
+        <label className="justify-self-start text-ronBurgundy">First Name</label>
+        <input className="w-full rounded-lg border border-ronBurgundy focus:ring-ronBurgundy focus:border-ronBurgundy" type="text" ref={firstName} />
+      </div>
 
-        <div className="field">
-          <label className="label">Username</label>
-          <div className="control">
-            <input className="input" type="text" ref={username} />
-          </div>
-        </div>
+      <div className="col-span-1">
+        <label className="justify-self-start text-ronBurgundy">Last Name</label>
+        <input className="w-full rounded-lg border border-ronBurgundy focus:ring-ronBurgundy focus:border-ronBurgundy" type="text" ref={lastName} />
+      </div>
 
-        <div className="field">
-          <label className="label">Email</label>
-          <div className="control">
-            <input className="input" type="email" ref={email} />
-          </div>
-        </div>
+      <div className="col-span-1">
+        <label className="justify-self-start text-ronBurgundy">Username</label>
+        <input className="w-full rounded-lg border border-ronBurgundy focus:ring-ronBurgundy focus:border-ronBurgundy" type="text" ref={username} />
+      </div>
 
-        <div className="field">
-          <label className="label">Password</label>
-          <div className="field-body">
-            <div className="field">
-              <p className="control is-expanded">
-                <input className="input" type="password" ref={password} />
-              </p>
-            </div>
-            <label className="label">Verify Password</label>
-            <div className="field-body">
-              <div className="field">
-                <p className="control is-expanded">
-                  <input className="input" type="password" ref={verifyPassword} />
-                </p>
-              </div>
-            </div>
+      <div className="col-span-1">
+        <label className="justify-self-start text-ronBurgundy">Email</label>
+        <input className="w-full rounded-lg border border-ronBurgundy focus:ring-ronBurgundy focus:border-ronBurgundy" type="email" ref={email} />
+      </div>
 
-            <div className="field">
-              <label className="label">Profile Image URL</label>
-              <p className="control is-expanded">
-                <input className="input" type="text" placeholder="Image URL" ref={profileImageURL} />
-              </p>
-            </div>
-          </div>
-        </div>
+      <div className="col-span-2">
+        <label className="justify-self-start text-ronBurgundy">Password</label>
+        <input className="w-full rounded-lg border border-ronBurgundy focus:ring-ronBurgundy focus:border-ronBurgundy" type="password" ref={password} />
+      </div>
 
-        <div className="field">
-          <label className="label">Bio</label>
-          <div className="control">
-            <textarea className="textarea" placeholder="Tell us about yourself..." ref={bio}></textarea>
-          </div>
-        </div>
 
-        <div className="field is-grouped">
-          <div className="control">
-            <button className="button is-link" type="submit">Submit</button>
-          </div>
-          <div className="control">
-            <Link to="/login" className="button is-link is-light">Back to Login</Link>
-          </div>
-        </div>
+      <div className="col-span-2">
+      <label className="justify-self-start text-ronBurgundy">Verify Password</label>
+            <input className="w-full rounded-lg border border-ronBurgundy focus:ring-ronBurgundy focus:border-ronBurgundy" type="password" ref={verifyPassword} />
+      </div>
 
-      </form>
-    </section>
+      <div className="col-span-2">
+        <label className="justify-self-start text-ronBurgundy">Profile Image URL</label>
+          <input className="w-full rounded-lg border border-ronBurgundy focus:ring-ronBurgundy focus:border-ronBurgundy placeholder-ronBurgundy" type="text" placeholder="Image URL" ref={profileImageURL} />
+      </div>
+
+      <div className="col-span-2">
+        <label className="justify-self-start text-ronBurgundy">Bio</label>
+          <textarea className="w-full rounded-lg border border-ronBurgundy focus:ring-ronBurgundy focus:border-ronBurgundy placeholder-ronBurgundy" placeholder="Tell us about yourself..." ref={bio}></textarea>
+      </div>
+
+      <div className="col-span-2 flex justify-between">
+          <Link to="/login" className="font-bold text-ronBurgundy hover:text-darkRonBurgundy">Back to Login</Link>
+          <button className="font-bold text-ronBurgundy hover:text-darkRonBurgundy" type="submit">Submit</button>
+      </div>
+
+    </form>
+
   )
 }

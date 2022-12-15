@@ -1,6 +1,8 @@
 import { useRef, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { loginUser } from "../../managers/AuthManager"
+import BrainBulb from "/Users/brandonherbison/workspace/kwizzed/src/designs/BrainBulb.png"
+import LoginIcon from "/Users/brandonherbison/workspace/kwizzed/src/icons/login.svg"
 
 export const Login = ({ setToken }) => {
   const username = useRef()
@@ -28,37 +30,23 @@ export const Login = ({ setToken }) => {
   }
 
   return (
-    <section className="columns is-centered">
-      <form className="column is-two-thirds" onSubmit={handleLogin}>
-        <h1 className="title">Kwizzed</h1>
-        <p className="subtitle">Please sign in</p>
+    <form className="grid grid-cols-1 justify-items-center mt-48 gap-1 w-1/5 m-auto p-6 " onSubmit={handleLogin}>
+      <img className="w-56 h-56 mb-3" src={BrainBulb} alt="Brain" />
+      <h1 className="font-luckiest text-4xl text-ronBurgundy">Kwizzed</h1>
+      <h2 className="font-medium text-2xl -mt-3 text-ronBurgundy">Competitive Trivia</h2>
 
-        <div className="field">
-          <label className="label">Username</label>
-          <div className="control">
-            <input className="input" type="text" ref={username} />
-          </div>
-        </div>
+      <div className="w-full">
+        <label className="justify-self-start text-ronBurgundy">Username</label>
+        <input className="w-full rounded-lg border border-ronBurgundy focus:ring-ronBurgundy focus:border-ronBurgundy" type="text" ref={username} />
+      </div>
+      <div className="w-full">
+        <label className="justify-self-start text-ronBurgundy">Password</label>
+        <input className="w-full rounded-lg border border-ronBurgundy focus:ring-ronBurgundy focus:border-ronBurgundy" type="password" ref={password} />
+      </div>
 
-        <div className="field">
-          <label className="label">Password</label>
-          <div className="control">
-            <input className="input" type="password" ref={password} />
-          </div>
-        </div>
+      <button className="justify-self-start text-white mt-1 bg-ronBurgundy rounded-full text-sm py-1 px-2  text-center mb-2 hover:bg-darkRonBurgundy" type="submit" >Login</button>
+      <Link to={"/register"} className="text-ronBurgundy self-end hover:text-darkRonBurgundy hover:font-bold">Create an account</Link>
 
-        <div className="field is-grouped">
-          <div className="control">
-            <button className="button is-link" type="submit" >Submit</button>
-          </div>
-          <div className="control">
-            <Link to="/register" className="button is-link is-light">Register</Link>
-          </div>
-        </div>
-        {
-          isUnsuccessful ? <p className="help is-danger">Username or password not valid</p> : ''
-        }
-      </form>
-    </section>
+    </form>
   )
 }

@@ -26,27 +26,30 @@ export const PracticeQuiz = () => {
 
 
     return <>
-        <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md  dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-            <h5 className="mb-2 text-lg tracking-tight text-gray-900 ">{currentQuestion + 1} of {questions.length}</h5>
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">{questions[currentQuestion]?.question_text}</h5>
-            <ul>
+        <div className="block max-w-2xl m-auto -mt-40 grid grid-cols-1 gap-4 p-8 bg-white border border-ronBurgundy rounded-lg shadow-xl">
+            <h5 className="mb-2 text-lg tracking-tight text-ronBurgundy ">{currentQuestion + 1} of {questions.length}</h5>
+            <h5 className="mb-2 text-4xl font-bold tracking-tight text-ronBurgundy ">{questions[currentQuestion]?.question_text}</h5>
+            <div className="grid grid-cols-1 gap-4">
                 {
                     questions[currentQuestion]?.answers.map(answer => {
-                        return <li key={answer.id}>
-                            <a onClick={() => answerClicked()} className="block  py-2 text-sm text-gray-700 hover:bg-gray-100 divide-y divide-gray-100">
+                        return <button key={answer.id} onClick={() => answerClicked()} className="block border border-ronBurgundy rounded-full w-full py-2 text-3xl text-ronBurgundy bg-pinkBrain hover:bg-ronBurgundy hover:text-pinkBrain transition ease-in-out delay-20
+                        hover:-translate-y-1 hover:scale-105
+                        duration-300">
+
                                 {answer.answer_text}
-                            </a>
-                        </li>
+                        </button>
                     }
                     )
                 }
-            </ul>
-            <button onClick={() => setCurrentQuestion(currentQuestion - 1)} className="text-white bg-ronBurgundy hover:ronBurgundy-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+            <button onClick={() => setCurrentQuestion(currentQuestion - 1)} className="text-white bg-ronBurgundy font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 hover:bg-darkRonBurgundy">
                 Previous
             </button>
-            <button onClick={() => navigate("/")} className="text-white bg-ronBurgundy hover:ronBurgundy-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <button onClick={() => navigate("/")} className="text-white bg-ronBurgundy font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 hover:bg-darkRonBurgundy">
                 Home
             </button>
+            </div>
         </div>
     </>
 }

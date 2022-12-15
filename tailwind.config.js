@@ -7,9 +7,15 @@ module.exports = {
   theme: {
     colors: {
       ronBurgundy: "#8B2325",
+      darkRonBurgundy: "#751E20",
       pinkBrain: "#FAF6F6",
       walterWhite: "#F5F5F5"
     },
+
+    fontFamily: {
+      luckiest: ['Luckiest Guy', 'cursive'],
+    }
+
   },
   plugins: [
     require('flowbite/plugin')

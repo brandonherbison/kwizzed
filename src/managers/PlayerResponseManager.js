@@ -37,3 +37,21 @@ export const CreatePlayerResponse = (playerResponse) => {
         body: JSON.stringify(playerResponse)
     }).then(res => res.json())
 }
+
+export const GetPlayerResponsesByCategory = (categoryId) => {
+    return fetch(`http://localhost:8000/playerresponses?category=${categoryId}&correct`, {
+        headers: {        
+            "Accept": "application/json",
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    }).then(res => res.json())
+}
+
+export const GetMostFrequentlyMissedQuestionByCategory = (categoryId) => {
+    return fetch(`http://localhost:8000/playerresponses?category=${categoryId}`, {
+        headers: {        
+            "Accept": "application/json",
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    }).then(res => res.json())
+}

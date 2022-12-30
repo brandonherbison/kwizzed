@@ -4,6 +4,7 @@ import { deleteReview, getAllReviews } from "../../managers/ReviewManager"
 import { getAllUsers, updateUser } from "../../managers/UserManager"
 import Delete from "/Users/brandonherbison/workspace/kwizzed/src/icons/delete.svg"
 import Check from "/Users/brandonherbison/workspace/kwizzed/src/icons/check.svg"
+import { GetMostFrequentlyMissedQuestionByCategory, GetPlayerResponsesByCategory } from "../../managers/PlayerResponseManager"
 
 
 
@@ -12,6 +13,16 @@ export const AdminHome = () => {
     const [questions, setQuestions] = useState([])
     const [players, setPlayers] = useState([])
     const [reviews, setReviews] = useState([])
+    const [sciencePercentage, setSciencePercentage] = useState(0)
+    const [historyPercentage, setHistoryPercentage] = useState(0)
+    const [geographyPercentage, setGeographyPercentage] = useState(0)
+    const [sportsPercentage, setSportsPercentage] = useState(0)
+    const [entertainmentPercentage, setEntertainmentPercentage] = useState(0)
+    const [scienceQuestion, setScienceQuestion] = useState({})
+    const [historyQuestion, setHistoryQuestion] = useState({})
+    const [geographyQuestion, setGeographyQuestion] = useState({})
+    const [sportsQuestion, setSportsQuestion] = useState({})
+    const [entertainmentQuestion, setEntertainmentQuestion] = useState({})
 
 
     const setUnapprovedQuestionsState = () => {
@@ -23,6 +34,21 @@ export const AdminHome = () => {
     const setReviewsState = () => {
         getAllReviews().then(setReviews)
     }
+
+    useEffect(() => {
+        GetPlayerResponsesByCategory(1).then(setSciencePercentage)
+        GetPlayerResponsesByCategory(2).then(setHistoryPercentage)
+        GetPlayerResponsesByCategory(3).then(setGeographyPercentage)
+        GetPlayerResponsesByCategory(4).then(setSportsPercentage)
+        GetPlayerResponsesByCategory(5).then(setEntertainmentPercentage)
+        GetMostFrequentlyMissedQuestionByCategory(1).then(setScienceQuestion)
+        GetMostFrequentlyMissedQuestionByCategory(2).then(setHistoryQuestion)
+        GetMostFrequentlyMissedQuestionByCategory(3).then(setGeographyQuestion)
+        GetMostFrequentlyMissedQuestionByCategory(4).then(setSportsQuestion)
+        GetMostFrequentlyMissedQuestionByCategory(5).then(setEntertainmentQuestion)
+    }
+    , [])
+
 
     useEffect(() => {
         setUnapprovedQuestionsState()
@@ -136,6 +162,28 @@ export const AdminHome = () => {
                                 </div>
                         })}
                     </div>
+                </div>
+                <div className="col-span-2 block w-full p-6 bg-white border border-ronBurgundy rounded-lg shadow-md">
+                    <h5 className="mb-2 text-3xl font-bold tracking-tight text-ronBurgundy">Category Analytics</h5>
+                    <h2> The following represents the percentage of questions answered correctly across each individal category:</h2>
+                        <div>
+                            <p>Science: {sciencePercentage}%</p>
+                            <p>History: {historyPercentage}%</p>
+                            <p>Geography: {geographyPercentage}%</p>
+                            <p>Sports: {sportsPercentage}%</p>
+                            <p>Entertainment: {entertainmentPercentage}%</p>
+                        </div>
+                </div>
+                <div className="col-span-2 block w-full p-6 bg-white border border-ronBurgundy rounded-lg shadow-md">
+                    <h5 className="mb-2 text-3xl font-bold tracking-tight text-ronBurgundy">Question Analytics</h5>
+                    <h2> The following represents the most frequently missed question from each category:</h2>
+                        <div>
+                            <div><p className="font-bold">Science:</p> <p className="italic">{scienceQuestion.question_text}</p> </div>
+                            <div><p className="font-bold">History:</p> <p className="italic">{historyQuestion.question_text}</p></div>
+                            <div><p className="font-bold">Geography:</p> <p className="italic">{geographyQuestion.question_text}</p></div>
+                            <div><p className="font-bold">Sports:</p> <p className="italic">{sportsQuestion.question_text}</p></div>
+                            <div><p className="font-bold">Entertainment:</p> <p className="italic">{entertainmentQuestion.question_text}</p></div>
+                        </div>
                 </div>
             </div>
         </div>

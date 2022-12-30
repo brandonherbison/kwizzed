@@ -50,7 +50,7 @@ export const NavBar = ({ setToken }) => {
         </nav>
         <div className={open? "visible relative mr-3 ": "invisible"}>
             <div className="flex justify-end container-sm">
-                <div className=" w-64 place-self-end bg-white divide-y divide-ronBurgundy rounded shadow border border-ronBurgundy" id="user-dropdown">
+                <div className=" w-64 place-self-end bg-white divide-y divide-ronBurgundy rounded shadow-xl border border-ronBurgundy" id="user-dropdown">
                     <div className="px-4 py-3">
                         <span className="block text-sm text-ronBurgundy">{currentUser.firstName} {currentUser.lastName} {currentUser.isStaff ? "(Admin)" : "(Player)"}</span>
                         <span className="block text-sm font-medium text-ronBurgundy truncate">{currentUser.email}</span>

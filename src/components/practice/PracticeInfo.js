@@ -8,7 +8,7 @@ export const PracticeInfo = () => {
         <p className="mb-2 text-lg tracking-tight text-gray-900">
         Take time to familarize yourself with the structure of the questions. You are free to take the practice quiz as many times as you like! Good luck.
         </p>
-        <button onClick={() => navigate("/practice-quiz")} className=" text-white bg-ronBurgundy justify-self-center font-medium rounded-full text-sm px-5 py-2.5 text-center hover:bg-darkRonBurgundy">
+        <button onClick={() => navigate("/practice-quiz")} className="text-white bg-ronBurgundy justify-self-center font-medium rounded-full text-sm px-5 py-2.5 text-center hover:bg-darkRonBurgundy">
             Begin
         </button>
     </div>

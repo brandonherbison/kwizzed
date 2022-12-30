@@ -8,17 +8,22 @@ export const HomeContainer = () => {
 
     const [currentUser, setCurrentUser] = useState({})
 
+    const [doneLoading, setDoneLoading] = useState(false)
+
     useEffect(() => {
         getCurrentUser().then((data) => {
             setCurrentUser(data)
+            setDoneLoading(true)
         })
     }, [])
 
-    return <>
-        {
-            currentUser.isStaff
-            ? <AdminHome />
-            : <PlayerHome />
-        }
-    </>
+    if (doneLoading) {
+        return <>
+            {
+                currentUser.isStaff
+                    ? <AdminHome />
+                    : <PlayerHome />
+            }
+        </>
+    }
 }

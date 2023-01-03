@@ -15,6 +15,7 @@ import { ReviewList } from "../components/reviews/ReviewList"
 import { CreateReview } from "../components/reviews/CreateReview"
 import { HomeContainer } from "../components/home/HomeConatainer"
 import { Leaderboard } from "../components/leaderboard/Leaderboard"
+import { PlayerStatistics } from "../components/leaderboard/PlayerStatistics"
 
 
 
@@ -43,6 +44,7 @@ export const ApplicationViews = ({ token, setToken }) => {
                 <Route path="/reviews" element={<ReviewList />} />
                 <Route path="/create-review" element={<CreateReview />} />
                 <Route path="/leaderboard" element={<Leaderboard />} />
+                <Route path="/player/:playerId/statistics" element={<PlayerStatistics />} />
             </Route>
 
 

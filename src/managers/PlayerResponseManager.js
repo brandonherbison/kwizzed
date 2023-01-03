@@ -55,3 +55,12 @@ export const GetMostFrequentlyMissedQuestionByCategory = (categoryId) => {
         }
     }).then(res => res.json())
 }
+
+export const GetCorrectPlayerResponsesByCategory = (playerId, categoryId ) => {
+    return fetch(`http://localhost:8000/playerresponses?player=${playerId}&category=${categoryId}`, {
+        headers: {        
+            "Accept": "application/json",
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    }).then(res => res.json())
+}

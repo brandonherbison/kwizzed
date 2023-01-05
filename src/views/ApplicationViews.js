@@ -10,7 +10,7 @@ import { NavBar } from "../components/nav/NavBar"
 import { Profile } from "../components/profile/Profile"
 import { UpdateProfile } from "../components/profile/UpdateProfile"
 import { SubmittedQuestions } from "../components/questions/SubmittedQuestions"
-import { CreateQuestion } from "../components/questions/CreateQuestion"
+import { QuestionContainer } from "../components/questions/QuestionContainer"
 import { ReviewList } from "../components/reviews/ReviewList"
 import { CreateReview } from "../components/reviews/CreateReview"
 import { HomeContainer } from "../components/home/HomeConatainer"
@@ -40,7 +40,7 @@ export const ApplicationViews = ({ token, setToken }) => {
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/update-profile" element={<UpdateProfile />} />
                 <Route path="/submitted-questions" element={<SubmittedQuestions />} />
-                <Route path="/create-question" element={<CreateQuestion />} />
+                <Route path="/create-question" element={<QuestionContainer />} />
                 <Route path="/reviews" element={<ReviewList />} />
                 <Route path="/create-review" element={<CreateReview />} />
                 <Route path="/leaderboard" element={<Leaderboard />} />

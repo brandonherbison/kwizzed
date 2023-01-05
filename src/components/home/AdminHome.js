@@ -5,6 +5,9 @@ import { getAllUsers, updateUser } from "../../managers/UserManager"
 import Delete from "/Users/brandonherbison/workspace/kwizzed/src/icons/delete.svg"
 import Check from "/Users/brandonherbison/workspace/kwizzed/src/icons/check.svg"
 import { GetMostFrequentlyMissedQuestionByCategory, GetPlayerResponsesByCategory } from "../../managers/PlayerResponseManager"
+import { CategoryCreator } from "./CategoryCreator"
+import { QuestionContainer } from "../questions/QuestionContainer"
+
 
 
 
@@ -163,7 +166,7 @@ export const AdminHome = () => {
                         })}
                     </div>
                 </div>
-                <div className="col-span-2 block w-full p-6 bg-white border border-ronBurgundy rounded-lg shadow-md">
+                <div className="col-span-1 block w-full p-6 bg-white border border-ronBurgundy rounded-lg shadow-md">
                     <h5 className="mb-2 text-3xl font-bold tracking-tight text-ronBurgundy">Category Analytics</h5>
                     <h2> The following represents the percentage of questions answered correctly across each individal category:</h2>
                         <div>
@@ -174,7 +177,10 @@ export const AdminHome = () => {
                             <p>Entertainment: {entertainmentPercentage}%</p>
                         </div>
                 </div>
-                <div className="col-span-2 block w-full p-6 bg-white border border-ronBurgundy rounded-lg shadow-md">
+                <div className="col-span-1 block w-full p-6 bg-white border border-ronBurgundy rounded-lg shadow-md">
+                <CategoryCreator/>
+                </div>
+                <div className="col-span-1 block w-full p-6 bg-white border border-ronBurgundy rounded-lg shadow-md">
                     <h5 className="mb-2 text-3xl font-bold tracking-tight text-ronBurgundy">Question Analytics</h5>
                     <h2> The following represents the most frequently missed question from each category:</h2>
                         <div>
@@ -184,6 +190,9 @@ export const AdminHome = () => {
                             <div><p className="font-bold">Sports:</p> <p className="italic">{sportsQuestion.question_text}</p></div>
                             <div><p className="font-bold">Entertainment:</p> <p className="italic">{entertainmentQuestion.question_text}</p></div>
                         </div>
+                </div>
+                <div className="col-span-1 block w-full p-6 bg-white border border-ronBurgundy rounded-lg shadow-md">
+                    <QuestionContainer/>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { deleteReview, getAllReviews } from "../../managers/ReviewManager"
 import { getCurrentUser } from "../../managers/UserManager"
-import Logo from '/Users/brandonherbison/workspace/kwizzed/src/icons/delete.svg'
+import Logo from '../../icons/delete.svg'
 
 
 

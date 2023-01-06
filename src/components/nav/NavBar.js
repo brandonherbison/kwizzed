@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { getCurrentUser } from "../../managers/UserManager"
-import Logo from "/Users/brandonherbison/workspace/kwizzed/src/designs/BrainBulb.png"
+import Logo from "../../designs/BrainBulb.png"
 
 
 

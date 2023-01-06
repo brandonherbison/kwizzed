@@ -2,8 +2,8 @@ import { useEffect, useState } from "react"
 import { deleteQuestion, getUnapprovedQuestions, updateQuestion } from "../../managers/QuestionManager"
 import { deleteReview, getAllReviews } from "../../managers/ReviewManager"
 import { getAllUsers, updateUser } from "../../managers/UserManager"
-import Delete from "/Users/brandonherbison/workspace/kwizzed/src/icons/delete.svg"
-import Check from "/Users/brandonherbison/workspace/kwizzed/src/icons/check.svg"
+import Delete from "../../icons/delete.svg"
+import Check from "../../icons/check.svg"
 import { GetMostFrequentlyMissedQuestionByCategory, GetPlayerResponsesByCategory } from "../../managers/PlayerResponseManager"
 import { CategoryCreator } from "./CategoryCreator"
 import { QuestionContainer } from "../questions/QuestionContainer"
@@ -99,7 +99,7 @@ export const AdminHome = () => {
     const seeQuestionsButton = () => {
         navigate("/questions/category/categoryId")
     }
-    
+
     return <>
         <div className="grid grid-cols-1 gap-3 w-3/5 m-auto -mt-16 p-6 bg-white border border-ronBurgundy border-2 rounded-lg shadow-xl bg-walterWhite">
             <h1 className="mb-2 text-4xl font-luckiest text-ronBurgundy text-center">Dashboard</h1>

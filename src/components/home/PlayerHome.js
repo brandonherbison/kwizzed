@@ -1,6 +1,6 @@
-import Logo from '/Users/brandonherbison/workspace/kwizzed/src/designs/practice.png'
-import Logo2 from '/Users/brandonherbison/workspace/kwizzed/src/designs/Leaderboard.png'
-import Logo3 from '/Users/brandonherbison/workspace/kwizzed/src/designs/play.png'
+import Logo from '../../designs/practice.png'
+import Logo2 from '../../designs/Leaderboard.png'
+import Logo3 from '../../designs/play.png'
 
 
 export const PlayerHome = () => {

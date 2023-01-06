@@ -2,7 +2,7 @@ import { useRef, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { loginUser } from "../../managers/AuthManager"
 import BrainBulb from "/Users/brandonherbison/workspace/kwizzed/src/designs/BrainBulb.png"
-import LoginIcon from "/Users/brandonherbison/workspace/kwizzed/src/icons/login.svg"
+
 
 export const Login = ({ setToken }) => {
   const username = useRef()

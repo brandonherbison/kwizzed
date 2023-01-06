@@ -4,7 +4,7 @@ import { CreatePlayerResponse } from "../../managers/PlayerResponseManager"
 import { GetQuestionsByCategory } from "../../managers/QuestionManager"
 import { getCurrentUser } from "../../managers/UserManager"
 import { Results } from "./Results"
-import Star from "/Users/brandonherbison/workspace/kwizzed/src/icons/star.svg"
+import Star from "../../icons/star.svg"
 
 
 

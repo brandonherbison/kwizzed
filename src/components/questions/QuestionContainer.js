@@ -26,12 +26,15 @@ export const QuestionContainer = () => {
 
     const [answers, setAnswers] = useState({})
 
+    const [doneLoading, setDoneLoading] = useState(false)
+
 
 
     useEffect(() => {
         getCurrentUser().then((data) => {
             setCurrentUser(data)
         })
+        setDoneLoading(true)
     }, [])
 
     useEffect(() => {
@@ -114,7 +117,7 @@ export const QuestionContainer = () => {
 
 
 
-    if (currentUser.isStaff) {
+    if (currentUser.isStaff && doneLoading) {
         return <AdminCreateQuestion
             categories={categories}
             handleSaveButtonClick={handleSaveButtonClick}
@@ -127,7 +130,7 @@ export const QuestionContainer = () => {
 
 
     }
-    else {
+    else if (doneLoading) {
         return <PlayerCreateQuestion
             categories={categories}
             handleSaveButtonClick={handleSaveButtonClick}

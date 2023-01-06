@@ -7,6 +7,7 @@ import Check from "/Users/brandonherbison/workspace/kwizzed/src/icons/check.svg"
 import { GetMostFrequentlyMissedQuestionByCategory, GetPlayerResponsesByCategory } from "../../managers/PlayerResponseManager"
 import { CategoryCreator } from "./CategoryCreator"
 import { QuestionContainer } from "../questions/QuestionContainer"
+import { useNavigate } from "react-router-dom"
 
 
 
@@ -27,6 +28,7 @@ export const AdminHome = () => {
     const [sportsQuestion, setSportsQuestion] = useState({})
     const [entertainmentQuestion, setEntertainmentQuestion] = useState({})
 
+    const navigate = useNavigate()
 
     const setUnapprovedQuestionsState = () => {
         getUnapprovedQuestions().then(setQuestions)
@@ -94,6 +96,10 @@ export const AdminHome = () => {
             .then(setReviewsState)
     }
 
+    const seeQuestionsButton = () => {
+        navigate("/questions/category/categoryId")
+    }
+    
     return <>
         <div className="grid grid-cols-1 gap-3 w-3/5 m-auto -mt-16 p-6 bg-white border border-ronBurgundy border-2 rounded-lg shadow-xl bg-walterWhite">
             <h1 className="mb-2 text-4xl font-luckiest text-ronBurgundy text-center">Dashboard</h1>

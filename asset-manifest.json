@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/kwizzed/static/css/main.43b2b961.css",
-    "main.js": "/kwizzed/static/js/main.a29cbc66.js",
+    "main.js": "/kwizzed/static/js/main.36fcb569.js",
     "static/media/BrainBulb.png": "/kwizzed/static/media/BrainBulb.67eec3df5f48d8f29068.png",
     "static/media/practice.png": "/kwizzed/static/media/practice.c836d409523a422ebca8.png",
     "static/media/play.png": "/kwizzed/static/media/play.61396fb8ec31c1721d42.png",
@@ -11,10 +11,10 @@
     "static/media/delete.svg": "/kwizzed/static/media/delete.9ccf3f6df106f5a7eead9e2e2f69be99.svg",
     "static/media/check.svg": "/kwizzed/static/media/check.3490091d463cbbf991a2ddedb9267e94.svg",
     "main.43b2b961.css.map": "/kwizzed/static/css/main.43b2b961.css.map",
-    "main.a29cbc66.js.map": "/kwizzed/static/js/main.a29cbc66.js.map"
+    "main.36fcb569.js.map": "/kwizzed/static/js/main.36fcb569.js.map"
   },
   "entrypoints": [
     "static/css/main.43b2b961.css",
-    "static/js/main.a29cbc66.js"
+    "static/js/main.36fcb569.js"
   ]
 }

@@ -28,6 +28,7 @@ export const AdminHome = () => {
     const [sportsQuestion, setSportsQuestion] = useState({})
     const [entertainmentQuestion, setEntertainmentQuestion] = useState({})
 
+
     const navigate = useNavigate()
 
     const setUnapprovedQuestionsState = () => {
@@ -51,6 +52,7 @@ export const AdminHome = () => {
         GetMostFrequentlyMissedQuestionByCategory(3).then(setGeographyQuestion)
         GetMostFrequentlyMissedQuestionByCategory(4).then(setSportsQuestion)
         GetMostFrequentlyMissedQuestionByCategory(5).then(setEntertainmentQuestion)
+
     }
     , [])
 
@@ -195,6 +197,7 @@ export const AdminHome = () => {
                             <div><p className="font-bold">Geography:</p> <p className="italic">{geographyQuestion.question_text}</p></div>
                             <div><p className="font-bold">Sports:</p> <p className="italic">{sportsQuestion.question_text}</p></div>
                             <div><p className="font-bold">Entertainment:</p> <p className="italic">{entertainmentQuestion.question_text}</p></div>
+
                         </div>
                 </div>
                 <div className="col-span-1 block w-full p-6 bg-white border border-ronBurgundy rounded-lg shadow-md">

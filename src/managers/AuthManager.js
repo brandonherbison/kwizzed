@@ -3,7 +3,8 @@ export const loginUser = (user) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Accept": "application/json"
+      "Accept": "application/json",
+      "Access-Control-Allow-Origin": "https://kwizzed-a3pup.ondigitalocean.app"
     },
     body: JSON.stringify({
       username: user.username,
@@ -17,7 +18,8 @@ export const registerUser = (newUser) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Accept": "application/json"
+      "Accept": "application/json",
+      "Access-Control-Allow-Origin": "https://kwizzed-a3pup.ondigitalocean.app"
     },
     body: JSON.stringify(newUser)
   }).then(res => res.json())

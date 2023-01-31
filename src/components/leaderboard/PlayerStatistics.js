@@ -16,7 +16,6 @@ export const PlayerStatistics = () => {
     const [correctGeographyCount, setCorrectGeographyCount] = useState(0)
     const [correctSportsCount, setCorrectSportsCount] = useState(0)
     const [correctEntertainmentCount, setCorrectEntertainmentCount] = useState(0)
-    const [correctComputerScienceCount, setCorrectComputerScienceCount] = useState(0)
 
     const navigate = useNavigate()
 
@@ -43,9 +42,6 @@ export const PlayerStatistics = () => {
         GetCorrectPlayerResponsesByCategory(playerId, 5).then((data) => {
             setCorrectEntertainmentCount(data)
         })
-        GetCorrectPlayerResponsesByCategory(playerId, 6).then((data) => {
-            setCorrectComputerScienceCount(data)
-        })
 
 
     }, [])
@@ -63,7 +59,6 @@ export const PlayerStatistics = () => {
                 <h3 className="text-2xl font-luckiest text-ronBurgundy">Geography: {correctGeographyCount}</h3>
                 <h3 className="text-2xl font-luckiest text-ronBurgundy">Sports: {correctSportsCount}</h3>
                 <h3 className="text-2xl font-luckiest text-ronBurgundy">Entertainment: {correctEntertainmentCount}</h3>
-                <h3 className="text-2xl font-luckiest text-ronBurgundy">Computer Science: {correctComputerScienceCount}</h3>
             
             <p className="text-ronBurgundy text-center">**The figures above represent how many questions the player has answered correctly for each respective category.</p>
             <button className="justify-self-end text-white font-luckiest bg-ronBurgundy hover:ronBurgundy-800 focus:outline-none focus:ring-4 focus:ring-blue-300  rounded-full text-sm px-5 py-2.5 text-center hover:bg-darkRonBurgundy" 

@@ -36,7 +36,7 @@ export const CategorySelector = () => {
 
     return <>
 
-        <div className="grid grid-cols-1 gap-3 w-1/5 m-auto -mt-40 p-6 bg-white border border-ronBurgundy border-2 rounded-lg shadow-xl bg-walterWhite">
+        <div className="grid grid-cols-1 gap-3 w-4/5 lg:w-1/5 m-auto -mt-40 p-6 bg-white border border-ronBurgundy border-2 rounded-lg shadow-xl bg-walterWhite">
             <label htmlFor="categories" className="  mb-2 text-sm font-luckiest text-3xl text-center text-ronBurgundy">Select a Category</label>
             <select onChange={changeCategoryState} id="id" className="bg-gray-50 border border-gray-300 text-ronBurgundy text-sm rounded-lg focus:ring-ronBurgundy focus:border-ronBurgundy block w-full p-2.5 ">
                 <option value={0}>Choose Category</option>

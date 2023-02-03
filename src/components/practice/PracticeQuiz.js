@@ -26,7 +26,7 @@ export const PracticeQuiz = () => {
 
 
     return <>
-        <div className="block max-w-2xl m-auto -mt-40 grid grid-cols-1 gap-4 p-8 bg-white border border-ronBurgundy rounded-lg shadow-xl">
+        <div className="block w-11/12 lg:w-5/12 m-auto -mt-40 grid grid-cols-1 gap-4 p-8 bg-white border border-ronBurgundy rounded-lg shadow-xl">
             <h5 className="mb-2 text-lg tracking-tight text-ronBurgundy ">{currentQuestion + 1} of {questions.length}</h5>
             <h5 className="mb-2 text-4xl font-bold tracking-tight text-ronBurgundy ">{questions[currentQuestion]?.question_text}</h5>
             <div className="grid grid-cols-1 gap-4">

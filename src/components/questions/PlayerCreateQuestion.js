@@ -6,7 +6,7 @@ export const PlayerCreateQuestion = ({ categories, handleSaveButtonClick, change
     
 
     return<>
-    <form className="grid grid-cols-1 gap-3 w-2/5 m-auto -mt-40 mb-10 p-6 bg-white border border-ronBurgundy border-2 rounded-lg shadow-xl bg-walterWhite">
+    <form className="grid grid-cols-1 gap-3 w-4/5 lg:w-2/5 m-auto -mt-40 mb-10 p-6 bg-white border border-ronBurgundy border-2 rounded-lg shadow-xl bg-walterWhite">
             <h1 className="text-4xl font-luckiest text-center text-ronBurgundy">Create Question</h1>
             <label className="block mb-2 text-sm font-medium text-ronBurgundy">Question Body</label>
             <textarea onChange={changeQuestionState} id="questionText" rows="4" placeholder="Enter Question Here" className="placeholder-ronBurgundy block p-2.5 w-full focus:ring-ronBurgundy focus:border-ronBurgundy text-sm text-ronBurgundy bg-gray-50 rounded-lg border border-ronBurgundy focus:ring-blue-500 focus:border-blue-500"></textarea>

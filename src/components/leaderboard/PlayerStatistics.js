@@ -49,7 +49,7 @@ export const PlayerStatistics = () => {
 
 
     return <>
-        <div className="grid grid-cols-1 justify-items-center gap-2 w-1/5 m-auto -mt-40 p-6 bg-white border border-ronBurgundy border-2 rounded-lg shadow-xl bg-walterWhite">
+        <div className="grid grid-cols-1 justify-items-center gap-2 w-11/12 lg:w-1/5 m-auto -mt-40 p-6 bg-white border border-ronBurgundy border-2 rounded-lg shadow-xl bg-walterWhite">
             <h1>{player.username}</h1>
             <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src={player.profile_image_url} alt="Avatar" />
             <h2 className="text-2xl font-luckiest text-ronBurgundy">{player?.user?.username}'s Statistics</h2>

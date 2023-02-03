@@ -125,7 +125,7 @@ export const Quiz = () => {
         {
             showResults
                 ? <>
-                    <div className="block w-4/12 m-auto -mt-40 mb-10 grid grid-cols-1 gap-4 p-8 bg-white border border-ronBurgundy rounded-lg shadow-xl">
+                    <div className="block w-4/5 lg:w-4/12 m-auto -mt-40 mb-10 grid grid-cols-1 gap-4 p-8 bg-white border border-ronBurgundy rounded-lg shadow-xl">
                         <h5 className="mb-2 text-4xl font-luckiest text-ronBurgundy text-center">Final Results</h5>
                         <h5 className="mb-2 text-3xl font-luckiest tracking-tight text-ronBurgundy text-center ">{score} out of {questions.length} correct - {score / questions.length * 100}%</h5>
                         <button
@@ -136,7 +136,7 @@ export const Quiz = () => {
                         <button
                             onClick={() => navigate("/create-review")}
                             type="button"
-                            className="  text-ronBurgundy border border-ronBurgundy font-luckiest text-3xl w-1/2 rounded-lg text-sm px-5 py-2.5 text-center justify-self-center shadow-lg transition ease-in-out delay-20
+                            className="text-ronBurgundy border border-ronBurgundy font-luckiest text-xl lg:text-3xl w-1/2 rounded-lg text-sm px-5 py-2.5 text-center justify-self-center shadow-lg transition ease-in-out delay-20
                         hover:-translate-y-1 hover:scale-105
                         duration-300">
                             Leave a Review
@@ -151,7 +151,7 @@ export const Quiz = () => {
                     < Results currentUserId={currentUser.id}/>
                     </div>
                 </>
-                : <div className="block max-w-2xl m-auto -mt-40 grid grid-cols-1 gap-4 p-8 bg-white border border-ronBurgundy rounded-lg shadow-xl">
+                : <div className="block w-11/12 lg:w-5/12 m-auto -mt-52 lg:-mt-40 grid grid-cols-1 gap-4 p-8 bg-white border border-ronBurgundy rounded-lg shadow-xl">
                     <div className="flex justify-between">
                         <h5 className="mb-2 text-lg tracking-tight text-ronBurgundy ">{currentQuestion + 1} of {questions.length}</h5>
                         <h5 className="mb-2 text-2xl text-ronBurgundy "> Time Remaining: {seconds}</h5>

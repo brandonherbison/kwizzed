@@ -54,7 +54,7 @@ export const UpdateProfile = () => {
 
 
     return <>
-        <form className="grid grid-cols-1 gap-3 w-2/5 m-auto -mt-40 p-6 bg-white border border-ronBurgundy border-2 rounded-lg shadow-xl bg-walterWhite">
+        <form className="grid grid-cols-1 gap-3 w-4/5 lg:w-2/5 m-auto -mt-40 p-6 bg-white border border-ronBurgundy border-2 rounded-lg shadow-xl bg-walterWhite">
             <div className="mb-6">
                 <label className="block mb-2 text-xl font-luckiest text-ronBurgundy">Username</label>
                 <input onChange={changeProfileState} type="text" id="username" className="bg-gray-50 border border-ronBurgundy text-ronBurgundy text-sm rounded-lg focus:ring-ronBurgundy focus:border-ronBurgundy block w-full p-2.5 " defaultValue={currentProfile.username} />

@@ -33,12 +33,12 @@ export const NavBar = ({ setToken }) => {
     return <>
 
 
-        <nav className="bg-pinkBrain sm:px-4 py-2.5 sticky">
+        <nav className="bg-pinkBrain sm:px-4 py-2.5 sticky top-0 border shadow-md lg:border-none lg:shadow-none">
             <div className="flex flex-wrap items-center justify-between">
                 <a href="/" className="flex items-center">
                     <img src={Logo} className=" w-16 mr-3 h-16" alt="Pink Brain" />
                 </a>
-                    <span className="self-center text-5xl font-luckiest whitespace-nowrap text-ronBurgundy dark:text-white">Kwizzed!</span>
+                    <span className="self-center lg:text-5xl text-3xl w font-luckiest whitespace-nowrap text-ronBurgundy dark:text-white">Kwizzed!</span>
                 <div className="flex items-center md:order-2">
                     <button onClick={showMenu} type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-ronBurgundy " id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="top">
                         <img className="w-16 h-16 rounded-full" src={currentUser.profileImageUrl} alt="avatar" />

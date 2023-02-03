@@ -41,7 +41,7 @@ export const Register = ({ setToken }) => {
 
   return (
 
-    <form className="grid grid-cols-2 gap-3 w-2/5 m-auto mt-36 p-6 bg-white border border-ronBurgundy border-2 rounded-lg shadow-xl bg-walterWhite" onSubmit={handleRegister}>
+    <form className="grid grid-cols-2 gap-3 lg:w-2/5 sm:w-4/5 m-auto lg:mt-36 sm:mt-28 p-6 bg-white border border-ronBurgundy border-2 rounded-lg shadow-xl bg-walterWhite" onSubmit={handleRegister}>
       <h1 className="col-span-2 font-luckiest text-ronBurgundy text-3xl text-center">Register</h1>
       <div className="col-span-1">
         <label className="justify-self-start text-ronBurgundy">First Name</label>

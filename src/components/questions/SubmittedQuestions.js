@@ -22,7 +22,7 @@ export const SubmittedQuestions = () => {
 
 
     return <>
-        <div className="grid grid-cols-1 gap-3 w-2/5 m-auto -mt-40 p-6 bg-white border border-ronBurgundy border-2 rounded-lg shadow-xl bg-walterWhite">
+        <div className="grid grid-cols-1 gap-3 w-4/5 lg:w-2/5 m-auto -mt-40 p-6 bg-white border border-ronBurgundy border-2 rounded-lg shadow-xl bg-walterWhite">
             <h1 className="mb-2 text-4xl font-luckiest text-ronBurgundy text-center">Submitted Questions</h1>
             <button
                 onClick={() => navigate("/create-question")}

@@ -30,8 +30,8 @@ export const Login = ({ setToken }) => {
   }
 
   return (
-    <form className="grid grid-cols-1 justify-items-center mt-48 gap-1 w-1/5 m-auto p-6 " onSubmit={handleLogin}>
-      <img className="w-56 h-56 mb-3" src={BrainBulb} alt="Brain" />
+    <form className="grid grid-cols-1 justify-items-center lg:mt-48 sm:mt-20 gap-1 lg:w-1/5 sm:w-3/5 m-auto p-6 " onSubmit={handleLogin}>
+      <img className="w-56 h-56" src={BrainBulb} alt="Brain" />
       <h1 className="font-luckiest text-4xl text-ronBurgundy">Kwizzed</h1>
       <h2 className="font-medium text-2xl -mt-3 text-ronBurgundy">Competitive Trivia</h2>
 

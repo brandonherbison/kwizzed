@@ -20,7 +20,7 @@ export const updateUser = user => {
 }
 
 export const getCurrentUser = () => {
-    return fetch("http://localhost:8000/players/current", {
+    return fetch("https://dolphin-app-y6xgd.ondigitalocean.app/players/current", {
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }

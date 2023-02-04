@@ -1,5 +1,5 @@
 export const GetCategories = () => {
-    return fetch("http://localhost:8000/categories", {
+    return fetch("https://dolphin-app-y6xgd.ondigitalocean.app/categories", {
         headers: {        
             "Accept": "application/json",
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
@@ -8,7 +8,7 @@ export const GetCategories = () => {
 }
 
 export const GetSingleCategory = (category) => {
-    return fetch(`http://localhost:8000/categories/${category.id}`, {
+    return fetch(`https://dolphin-app-y6xgd.ondigitalocean.app/categories/${category.id}`, {
         headers: {        
             "Accept": "application/json",
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
@@ -17,7 +17,7 @@ export const GetSingleCategory = (category) => {
 }
 
 export const CreateCategory = (category) => {
-    return fetch("http://localhost:8000/categories", {
+    return fetch("https://dolphin-app-y6xgd.ondigitalocean.app/categories", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

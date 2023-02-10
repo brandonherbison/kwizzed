@@ -29,10 +29,10 @@ export const ApplicationViews = ({ token, setToken }) => {
         }
         <Routes>
 
-            <Route path="/" element={<HomeContainer />} />
             <Route path="/login" element={<Login setToken={setToken} />} />
             <Route path="/register" element={<Register setToken={setToken} />} />
             <Route element={<Authorized token={token} />} >
+                <Route path="/" element={<HomeContainer />} />
                 <Route path="/category-selector" element={<CategorySelector />} />
                 <Route path="/play-now/:categoryId" element={<Quiz />} />
                 <Route path="/practice-info" element={<PracticeInfo />} />

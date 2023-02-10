@@ -8,7 +8,7 @@ export const getAllUsers = () => {
 }
 
 
-export const updateUser = user => {
+export const updateUser = (user) => {
     return fetch(`https://dolphin-app-y6xgd.ondigitalocean.app/players/${user.id}`, {
         method: "PUT",
         headers: {

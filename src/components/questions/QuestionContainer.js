@@ -11,12 +11,12 @@ import { PlayerCreateQuestion } from "./PlayerCreateQuestion"
 
 
 export const QuestionContainer = () => {
-
-    const [question, updateQuestion] = useState({
+    const initialQuestionState = {
         questionText: "",
         categoryId: 0,
         difficultyLevel: "",
-    })
+    }
+    const [question, updateQuestion] = useState(initialQuestionState)
 
     const navigate = useNavigate()
 
@@ -26,7 +26,6 @@ export const QuestionContainer = () => {
 
     const [answers, setAnswers] = useState({})
 
-    const [doneLoading, setDoneLoading] = useState(false)
 
 
 
@@ -34,7 +33,6 @@ export const QuestionContainer = () => {
         getCurrentUser().then((data) => {
             setCurrentUser(data)
         })
-        setDoneLoading(true)
     }, [])
 
     useEffect(() => {
@@ -66,7 +64,7 @@ export const QuestionContainer = () => {
         if (question.questionText === "" || question.categoryId === 0 || question.difficultyLevel === "") {
             window.alert("Please fill out all fields")
         }
-        else if (Object.keys(answers).length < 2) {
+        else if (Object.keys(answers).length < 4) {
             window.alert("Please enter 4 answers")
         }
         else {
@@ -80,10 +78,10 @@ export const QuestionContainer = () => {
             CreateNewQuestion(newQuestion).then((newQuestion) => {
                 const answerArray = Object.values(answers)
 
-                answerArray.forEach((answer, key) => {
+                answerArray.forEach((answer, idx) => {
                     const newAnswer = {
                         answerText: answer,
-                        isCorrect: key === 0 ? true : false,
+                        isCorrect: idx === 0 ? true : false,
                         questionId: newQuestion.id
                     }
                     promiseArray.push(CreateNewAnswer(newAnswer))
@@ -92,17 +90,12 @@ export const QuestionContainer = () => {
                 Promise.all([promiseArray]
                 ).then(() => {
                     GetQuestions().then(() => {
-                        window.alert("Question successfully created")
+                        window.alert("Question and Answers successfully created")
                         if (!currentUser.isStaff) {
                             navigate("/submitted-questions")
                         }
                         else {
-                            //reset the state of the form back to empty
-                            updateQuestion({
-                                questionText: "",
-                                categoryId: 0,
-                                difficultyLevel: "",
-                            })
+                            updateQuestion(initialQuestionState)
                             setAnswers({1: "", 2: "", 3: "", 4: ""})
                         }
 
@@ -117,7 +110,7 @@ export const QuestionContainer = () => {
 
 
 
-    if (currentUser.isStaff && doneLoading) {
+    if (currentUser.isStaff) {
         return <AdminCreateQuestion
             categories={categories}
             handleSaveButtonClick={handleSaveButtonClick}
@@ -130,7 +123,7 @@ export const QuestionContainer = () => {
 
 
     }
-    else if (doneLoading) {
+    else {
         return <PlayerCreateQuestion
             categories={categories}
             handleSaveButtonClick={handleSaveButtonClick}

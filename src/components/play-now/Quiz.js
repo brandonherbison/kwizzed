@@ -29,11 +29,12 @@ export const Quiz = () => {
     
     useEffect(() => {
         getCurrentUser().then(setCurrentUser)
+        startTimer()
+        GetQuestionsByCategory(categoryId).then(setQuestions).then(() => { setCurrentQuestion(0) })
+        // If unmounted, stop the interval from running in background
+        return () => stopTimer()
     }, [])
     
-    useEffect(() => {
-        GetQuestionsByCategory(categoryId).then(setQuestions).then(() => { setCurrentQuestion(0) })
-    }, [])
     
     useEffect(() => {
         if (questions.length > 0) {
@@ -57,9 +58,6 @@ export const Quiz = () => {
         }
     }, [helpButtonPressed])
 
-    useEffect(() => {
-        startTimer()
-    }, [])
 
     useEffect(() => {
 

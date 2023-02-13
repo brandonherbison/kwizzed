@@ -11,7 +11,6 @@ export const Register = ({ setToken }) => {
   const bio = useRef()
   const password = useRef()
   const verifyPassword = useRef()
-  const profileImageURL = useRef()
   const navigate = useNavigate()
 
   const handleRegister = (e) => {
@@ -26,7 +25,6 @@ export const Register = ({ setToken }) => {
         password: password.current.value,
         bio: bio.current.value,
         is_staff: false,
-        profile_image_url: profileImageURL.current.value
       }
 
       registerUser(newUser)
@@ -72,11 +70,6 @@ export const Register = ({ setToken }) => {
       <div className="col-span-2">
       <label className="justify-self-start text-ronBurgundy">Verify Password</label>
             <input className="w-full rounded-lg border border-ronBurgundy focus:ring-ronBurgundy focus:border-ronBurgundy" type="password" ref={verifyPassword} />
-      </div>
-
-      <div className="col-span-2">
-        <label className="justify-self-start text-ronBurgundy">Profile Image URL</label>
-          <input className="w-full rounded-lg border border-ronBurgundy focus:ring-ronBurgundy focus:border-ronBurgundy placeholder-ronBurgundy" type="text" placeholder="Image URL" ref={profileImageURL} />
       </div>
 
       <div className="col-span-2">

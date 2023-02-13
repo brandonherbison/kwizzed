@@ -35,7 +35,7 @@ export const Quiz = () => {
         return () => stopTimer()
     }, [])
     
-    
+    // Listens for currentQuestion to change and then shuffles the answers
     useEffect(() => {
         if (questions.length > 0) {
             const shuffledAnswers = questions[currentQuestion].answers.sort(() => Math.random() - 0.5)
@@ -44,6 +44,7 @@ export const Quiz = () => {
         
     }, [currentQuestion])
 
+    // Listens for helpButtonPressed to change and then reduces the number of incorrect answers to 1 and shuffles the correct answer with the incorrect answer
     useEffect(() => {
         if (helpButtonPressed) {
             setHelpCount(helpCount + 1)
@@ -58,7 +59,7 @@ export const Quiz = () => {
         }
     }, [helpButtonPressed])
 
-
+    // Listens for seconds to change and then moves to the next question if the timer runs out
     useEffect(() => {
 
         if (seconds === 0) { 

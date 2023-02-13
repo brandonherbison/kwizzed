@@ -24,6 +24,12 @@ export const PracticeQuiz = () => {
         }
     }
 
+    const reverseQuestion = () => {
+        if (currentQuestion - 1 >= 0) {
+            setCurrentQuestion(currentQuestion - 1)
+        }
+    }
+
 
     return <>
         <div className="block w-11/12 lg:w-5/12 m-auto -mt-40 grid grid-cols-1 gap-4 p-8 bg-white border border-ronBurgundy rounded-lg shadow-xl">
@@ -43,7 +49,7 @@ export const PracticeQuiz = () => {
                 }
             </div>
             <div className="grid grid-cols-2 gap-4">
-            <button onClick={() => setCurrentQuestion(currentQuestion - 1)} className="text-white bg-ronBurgundy font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 hover:bg-darkRonBurgundy">
+            <button onClick={() => reverseQuestion()} className="text-white bg-ronBurgundy font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 hover:bg-darkRonBurgundy">
                 Previous
             </button>
             <button onClick={() => navigate("/")} className="text-white bg-ronBurgundy font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 hover:bg-darkRonBurgundy">

@@ -1,5 +1,5 @@
 export const getAllReviews = () => {
-    return fetch("https://dolphin-app-y6xgd.ondigitalocean.app/reviews", {
+    return fetch("http://localhost:8000/reviews", {
         headers: {        
             "Accept": "application/json",
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
@@ -9,7 +9,7 @@ export const getAllReviews = () => {
 
 
 export const createNewReview = (review) => {
-    return fetch("https://dolphin-app-y6xgd.ondigitalocean.app/reviews", {
+    return fetch("http://localhost:8000/reviews", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -21,7 +21,7 @@ export const createNewReview = (review) => {
 }
 
 export const deleteReview = (reviewId) => {
-    return fetch(`https://dolphin-app-y6xgd.ondigitalocean.app/reviews/${reviewId}`, {
+    return fetch(`http://localhost:8000/reviews/${reviewId}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",

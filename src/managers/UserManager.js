@@ -1,5 +1,5 @@
 export const getAllUsers = () => {
-    return fetch("https://dolphin-app-y6xgd.ondigitalocean.app/players", {
+    return fetch("http://localhost:8000/players", {
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }
@@ -9,7 +9,7 @@ export const getAllUsers = () => {
 
 
 export const updateUser = (user) => {
-    return fetch(`https://dolphin-app-y6xgd.ondigitalocean.app/players/${user.id}`, {
+    return fetch(`http://localhost:8000/players/${user.id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -20,7 +20,7 @@ export const updateUser = (user) => {
 }
 
 export const getCurrentUser = () => {
-    return fetch("https://dolphin-app-y6xgd.ondigitalocean.app/players/current", {
+    return fetch("http://localhost:8000/players/current", {
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }
@@ -29,7 +29,7 @@ export const getCurrentUser = () => {
 }
 
 export const getUserById = (id) => {
-    return fetch(`https://dolphin-app-y6xgd.ondigitalocean.app/players/${id}`, {
+    return fetch(`http://localhost:8000/players/${id}`, {
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }

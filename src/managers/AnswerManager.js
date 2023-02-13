@@ -1,5 +1,5 @@
 export const CreateNewAnswer = (answer) => {
-    return fetch("https://dolphin-app-y6xgd.ondigitalocean.app/answers", {
+    return fetch("http://localhost:8000/answers", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

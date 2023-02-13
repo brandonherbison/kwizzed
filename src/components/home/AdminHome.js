@@ -52,16 +52,12 @@ export const AdminHome = () => {
         GetMostFrequentlyMissedQuestionByCategory(3).then(setGeographyQuestion)
         GetMostFrequentlyMissedQuestionByCategory(4).then(setSportsQuestion)
         GetMostFrequentlyMissedQuestionByCategory(5).then(setEntertainmentQuestion)
-
-    }
-    , [])
-
-
-    useEffect(() => {
         setUnapprovedQuestionsState()
         setUserState()
         setReviewsState()
-    }, [])
+    }
+    , [])
+
 
     const approveQuestion = (question) => {
         const updatedQuestion = {
@@ -98,9 +94,6 @@ export const AdminHome = () => {
             .then(setReviewsState)
     }
 
-    const seeQuestionsButton = () => {
-        navigate("/questions/category/categoryId")
-    }
 
     return <>
         <div className="grid grid-cols-1 gap-3 w-3/5 m-auto -mt-16 p-6 bg-white border border-ronBurgundy border-2 rounded-lg shadow-xl bg-walterWhite">

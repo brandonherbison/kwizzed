@@ -48,7 +48,7 @@ export const NavBar = ({ setToken }) => {
 
             </div>
         </nav>
-        <div className={open? "visible relative mr-3 ": "invisible"}>
+        <div className={open? "visible relative mr-3 sticky top-20 ": "invisible"}>
             <div className="flex justify-end container-sm">
                 <div className=" w-64 place-self-end bg-white divide-y divide-ronBurgundy rounded shadow-xl border border-ronBurgundy" id="user-dropdown">
                     <div className="px-4 py-3">

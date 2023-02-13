@@ -16,6 +16,7 @@ export const QuestionContainer = () => {
         categoryId: 0,
         difficultyLevel: "",
     }
+
     const [question, updateQuestion] = useState(initialQuestionState)
 
     const navigate = useNavigate()
@@ -33,9 +34,6 @@ export const QuestionContainer = () => {
         getCurrentUser().then((data) => {
             setCurrentUser(data)
         })
-    }, [])
-
-    useEffect(() => {
         GetCategories().then(setCategories)
     }, [])
 
@@ -48,7 +46,7 @@ export const QuestionContainer = () => {
 
     const changeAnswerState = (domEvent) => {
         const copy = { ...answers };
-        copy[domEvent?.target.id] = domEvent.target.value;
+        copy[domEvent.target.id] = domEvent.target.value;
         if (domEvent.target.value !== "") {
             setAnswers(copy)
 
@@ -64,7 +62,7 @@ export const QuestionContainer = () => {
         if (question.questionText === "" || question.categoryId === 0 || question.difficultyLevel === "") {
             window.alert("Please fill out all fields")
         }
-        else if (Object.keys(answers).length < 4) {
+        else if (answers[1] === "" || answers[2] === "" || answers[3] === "" || answers[4] === "") {
             window.alert("Please enter 4 answers")
         }
         else {
@@ -87,21 +85,17 @@ export const QuestionContainer = () => {
                     promiseArray.push(CreateNewAnswer(newAnswer))
                 })
             },
-                Promise.all([promiseArray]
-                ).then(() => {
-                    GetQuestions().then(() => {
-                        window.alert("Question and Answers successfully created")
-                        if (!currentUser.isStaff) {
-                            navigate("/submitted-questions")
-                        }
-                        else {
-                            updateQuestion(initialQuestionState)
-                            setAnswers({1: "", 2: "", 3: "", 4: ""})
-                        }
-
-
+                Promise.all(promiseArray).then(() => {
+                    window.alert("Question and Answers successfully created")
+                    if (!currentUser.isStaff) {
+                        navigate("/submitted-questions")
                     }
-                    )
+                    else {
+                        updateQuestion(initialQuestionState)
+                        setAnswers({})
+                        document.getElementById("form").reset()
+                    }
+
                 }
                 )
             )
@@ -117,9 +111,9 @@ export const QuestionContainer = () => {
             changeQuestionState={changeQuestionState}
             changeAnswerState={changeAnswerState}
             setAnswers={setAnswers}
-            updateQuestion={updateQuestion} 
+            updateQuestion={updateQuestion}
             question={question}
-            answers={answers}/>
+            answers={answers} />
 
 
     }

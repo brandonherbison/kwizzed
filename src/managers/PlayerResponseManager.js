@@ -1,5 +1,5 @@
 export const GetAllPlayerResponses = () => {
-    return fetch("http://https://seahorse-app-s7cvy.ondigitalocean.app/playerresponses", {
+    return fetch("https://seahorse-app-s7cvy.ondigitalocean.app/playerresponses", {
         headers: {        
             "Accept": "application/json",
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
@@ -8,7 +8,7 @@ export const GetAllPlayerResponses = () => {
 }
 
 export const GetSinglePlayerResponse = (playerResponse) => {
-    return fetch(`http://https://seahorse-app-s7cvy.ondigitalocean.app/playerresponses/${playerResponse.id}`, {
+    return fetch(`https://seahorse-app-s7cvy.ondigitalocean.app/playerresponses/${playerResponse.id}`, {
         headers: {        
             "Accept": "application/json",
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
@@ -17,7 +17,7 @@ export const GetSinglePlayerResponse = (playerResponse) => {
 }
 
 export const GetPlayerResponsesByPlayer = (playerId) => {
-    return fetch(`http://https://seahorse-app-s7cvy.ondigitalocean.app/playerresponses?player=${playerId}`, {
+    return fetch(`https://seahorse-app-s7cvy.ondigitalocean.app/playerresponses?player=${playerId}`, {
         headers: {        
             "Accept": "application/json",
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
@@ -27,7 +27,7 @@ export const GetPlayerResponsesByPlayer = (playerId) => {
 
 // create new player response
 export const CreatePlayerResponse = (playerResponse) => {
-    return fetch("http://https://seahorse-app-s7cvy.ondigitalocean.app/playerresponses", {
+    return fetch("https://seahorse-app-s7cvy.ondigitalocean.app/playerresponses", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export const CreatePlayerResponse = (playerResponse) => {
 }
 
 export const GetPlayerResponsesByCategory = (categoryId) => {
-    return fetch(`http://https://seahorse-app-s7cvy.ondigitalocean.app/playerresponses?category=${categoryId}&correct`, {
+    return fetch(`https://seahorse-app-s7cvy.ondigitalocean.app/playerresponses?category=${categoryId}&correct`, {
         headers: {        
             "Accept": "application/json",
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
@@ -48,7 +48,7 @@ export const GetPlayerResponsesByCategory = (categoryId) => {
 }
 
 export const GetMostFrequentlyMissedQuestionByCategory = (categoryId) => {
-    return fetch(`http://https://seahorse-app-s7cvy.ondigitalocean.app/playerresponses?category=${categoryId}`, {
+    return fetch(`https://seahorse-app-s7cvy.ondigitalocean.app/playerresponses?category=${categoryId}`, {
         headers: {        
             "Accept": "application/json",
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
@@ -57,7 +57,7 @@ export const GetMostFrequentlyMissedQuestionByCategory = (categoryId) => {
 }
 
 export const GetCorrectPlayerResponsesByCategory = (playerId, categoryId ) => {
-    return fetch(`http://https://seahorse-app-s7cvy.ondigitalocean.app/playerresponses?player=${playerId}&category=${categoryId}`, {
+    return fetch(`https://seahorse-app-s7cvy.ondigitalocean.app/playerresponses?player=${playerId}&category=${categoryId}`, {
         headers: {        
             "Accept": "application/json",
             "Authorization": `Token ${localStorage.getItem("auth_token")}`

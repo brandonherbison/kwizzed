@@ -1,5 +1,5 @@
 export const getAllUsers = () => {
-    return fetch("http://https://seahorse-app-s7cvy.ondigitalocean.app/players", {
+    return fetch("https://seahorse-app-s7cvy.ondigitalocean.app/players", {
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }
@@ -9,7 +9,7 @@ export const getAllUsers = () => {
 
 
 export const updateUser = (user) => {
-    return fetch(`http://https://seahorse-app-s7cvy.ondigitalocean.app/players/${user.id}`, {
+    return fetch(`https://seahorse-app-s7cvy.ondigitalocean.app/players/${user.id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -20,7 +20,7 @@ export const updateUser = (user) => {
 }
 
 export const getCurrentUser = () => {
-    return fetch("http://https://seahorse-app-s7cvy.ondigitalocean.app/players/current", {
+    return fetch("https://seahorse-app-s7cvy.ondigitalocean.app/players/current", {
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }
@@ -29,7 +29,7 @@ export const getCurrentUser = () => {
 }
 
 export const getUserById = (id) => {
-    return fetch(`http://https://seahorse-app-s7cvy.ondigitalocean.app/players/${id}`, {
+    return fetch(`https://seahorse-app-s7cvy.ondigitalocean.app/players/${id}`, {
         headers: {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }

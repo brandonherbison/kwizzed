@@ -1,5 +1,5 @@
 export const loginUser = (user) => {
-  return fetch("http://https://seahorse-app-s7cvy.ondigitalocean.app/login", {
+  return fetch("https://seahorse-app-s7cvy.ondigitalocean.app/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -12,7 +12,7 @@ export const loginUser = (user) => {
 }
 
 export const registerUser = (newUser) => {
-  return fetch("http://https://seahorse-app-s7cvy.ondigitalocean.app/register", {
+  return fetch("https://seahorse-app-s7cvy.ondigitalocean.app/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

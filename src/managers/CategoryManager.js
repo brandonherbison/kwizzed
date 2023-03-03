@@ -1,5 +1,5 @@
 export const GetCategories = () => {
-    return fetch("http://https://seahorse-app-s7cvy.ondigitalocean.app/categories", {
+    return fetch("https://seahorse-app-s7cvy.ondigitalocean.app/categories", {
         headers: {        
             "Accept": "application/json",
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
@@ -8,7 +8,7 @@ export const GetCategories = () => {
 }
 
 export const GetSingleCategory = (category) => {
-    return fetch(`http://https://seahorse-app-s7cvy.ondigitalocean.app/categories/${category.id}`, {
+    return fetch(`https://seahorse-app-s7cvy.ondigitalocean.app/categories/${category.id}`, {
         headers: {        
             "Accept": "application/json",
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
@@ -17,7 +17,7 @@ export const GetSingleCategory = (category) => {
 }
 
 export const CreateCategory = (category) => {
-    return fetch("http://https://seahorse-app-s7cvy.ondigitalocean.app/categories", {
+    return fetch("https://seahorse-app-s7cvy.ondigitalocean.app/categories", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

@@ -1,5 +1,5 @@
 export const getAllReviews = () => {
-    return fetch("http://https://seahorse-app-s7cvy.ondigitalocean.app/reviews", {
+    return fetch("https://seahorse-app-s7cvy.ondigitalocean.app/reviews", {
         headers: {        
             "Accept": "application/json",
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
@@ -9,7 +9,7 @@ export const getAllReviews = () => {
 
 
 export const createNewReview = (review) => {
-    return fetch("http://https://seahorse-app-s7cvy.ondigitalocean.app/reviews", {
+    return fetch("https://seahorse-app-s7cvy.ondigitalocean.app/reviews", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -21,7 +21,7 @@ export const createNewReview = (review) => {
 }
 
 export const deleteReview = (reviewId) => {
-    return fetch(`http://https://seahorse-app-s7cvy.ondigitalocean.app/reviews/${reviewId}`, {
+    return fetch(`https://seahorse-app-s7cvy.ondigitalocean.app/reviews/${reviewId}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",

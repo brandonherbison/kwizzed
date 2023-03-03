@@ -1,5 +1,5 @@
 export const CreateNewAnswer = (answer) => {
-    return fetch("http://https://seahorse-app-s7cvy.ondigitalocean.app/answers", {
+    return fetch("https://seahorse-app-s7cvy.ondigitalocean.app/answers", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

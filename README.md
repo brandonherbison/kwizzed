@@ -1,6 +1,6 @@
 # Kwizzed
 
-Welcome to Quizzed, the ultimate trivia game app! With Quizzed, you can test your knowledge and challenge your friends with fun and engaging trivia questions.
+Welcome to Kwizzed, the ultimate trivia game app! With Kwizzed, you can test your knowledge and challenge your friends with fun and engaging trivia questions.
 
 ## Application Overview
 

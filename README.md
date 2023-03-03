@@ -23,4 +23,4 @@ Compete against your friends for bragging rights and try to earn the top spot on
 
 ## Demo
 
-Check out the live demo of Quizzed [here](https://kwizzedtrivia.com)
+Check out the live demo of Quizzed [here](https://kwizzed-a3pup.ondigitalocean.app/login)

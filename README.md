@@ -23,4 +23,4 @@ Compete against your friends for bragging rights and try to earn the top spot on
 
 ## Demo
 
-This project was deployed using DigitalOcean. Check out the live demo of Quizzed [here](https://kwizzed-a3pup.ondigitalocean.app/login)
+This project was deployed using DigitalOcean. Check out the live demo [here](https://kwizzed-a3pup.ondigitalocean.app/login)

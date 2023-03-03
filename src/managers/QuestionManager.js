@@ -1,5 +1,5 @@
 export const GetQuestions = () => {
-    return fetch("http://localhost:8000/questions", {
+    return fetch("http://https://seahorse-app-s7cvy.ondigitalocean.app/questions", {
         headers: {        
             "Accept": "application/json",
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
@@ -8,7 +8,7 @@ export const GetQuestions = () => {
 }
 
 export const GetSingleQuestion = (question) => {
-    return fetch(`http://localhost:8000/questions/${question.id}`, {
+    return fetch(`http://https://seahorse-app-s7cvy.ondigitalocean.app/questions/${question.id}`, {
         headers: {        
             "Accept": "application/json",
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
@@ -17,7 +17,7 @@ export const GetSingleQuestion = (question) => {
 }
 
 export const GetQuestionsByCategory = (categoryId) => {
-    return fetch(`http://localhost:8000/questions?category=${categoryId}`, {
+    return fetch(`http://https://seahorse-app-s7cvy.ondigitalocean.app/questions?category=${categoryId}`, {
         headers: {        
             "Accept": "application/json",
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
@@ -26,7 +26,7 @@ export const GetQuestionsByCategory = (categoryId) => {
 }
 
 export const GetPracticeQuestions = () => {
-    return fetch("http://localhost:8000/questions?practice=1", {
+    return fetch("http://https://seahorse-app-s7cvy.ondigitalocean.app/questions?practice=1", {
         headers: {        
             "Accept": "application/json",
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
@@ -36,7 +36,7 @@ export const GetPracticeQuestions = () => {
 
 
 export const CreateNewQuestion = (question) => {
-    return fetch("http://localhost:8000/questions", {
+    return fetch("http://https://seahorse-app-s7cvy.ondigitalocean.app/questions", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -48,7 +48,7 @@ export const CreateNewQuestion = (question) => {
 }
 
 export const deleteQuestion = (questionId) => {
-    return fetch(`http://localhost:8000/questions/${questionId}`, {
+    return fetch(`http://https://seahorse-app-s7cvy.ondigitalocean.app/questions/${questionId}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
@@ -58,7 +58,7 @@ export const deleteQuestion = (questionId) => {
 }
 
 export const updateQuestion = (question) => {
-    return fetch(`http://localhost:8000/questions/${question.id}`, {
+    return fetch(`http://https://seahorse-app-s7cvy.ondigitalocean.app/questions/${question.id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -69,7 +69,7 @@ export const updateQuestion = (question) => {
 }
 
 export const getUnapprovedQuestions = () => {
-    return fetch("http://localhost:8000/questions?approved=False", {
+    return fetch("http://https://seahorse-app-s7cvy.ondigitalocean.app/questions?approved=False", {
         headers: {        
             "Accept": "application/json",
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
